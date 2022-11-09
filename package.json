@@ -1,0 +1,19 @@
+{
+  "name": "hedera-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hashgraph/sdk": "2.18.1",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2"
+  }
+}
