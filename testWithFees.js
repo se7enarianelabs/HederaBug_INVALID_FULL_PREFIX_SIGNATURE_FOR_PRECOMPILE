@@ -12,7 +12,7 @@ const operatorKey = PrivateKey.fromString(process.env.MY_PRIVATE_KEY);
 const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 const treasury = new HederaAccount(operatorId, operatorKey)
 
-const CONTRACT_ID = "0.0.48823055";
+const CONTRACT_ID = "0.0.48851767";
 async function main(){
     const nftWithHBarFixedFeeCollectorAccount = await (new HederaAccount().createAccount(Hbar.from(0, HbarUnit.Hbar).toTinybars()));
     const nftWithHBarFixedFee = await (new HederaNFT().createNFTWithFixedFallbackFees(operatorId, operatorKey,
@@ -38,7 +38,7 @@ async function test(token, owner, to, tokenId){
     const executeTransaction = await new ContractExecuteTransaction()
     .setContractId(CONTRACT_ID)
     .setGas(10000000)
-    .setFunction("_transferERC721AssetFrom", new ContractFunctionParameters()
+    .setFunction("_delegateTransferERC721AssetFrom", new ContractFunctionParameters()
         .addAddress(token)
         .addAddress(owner)
         .addAddress(to)
